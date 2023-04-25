@@ -4,18 +4,18 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"kubeteam","app.kubernetes.io/managed-by":"Helm",\"app.kubernetes.io/name":"hello-world","app.kubernetes.io/version":"1.16.0","helm.sh/chart":"hello-world-0.1.0"},"name":"kubeteam-hello-world","namespace":"default"},"spec":{"replicas":1,"selector":{"matchLabels":{"app.kubernetes.io/instance":"kubeteam","app.kubernetes.io/name":"hello-world"}},"template":{"metadata":{"labels":{"app.kubernetes.io/instance":"kubeteam","app.kubernetes.io/name":"hello-world"}},"spec":{"containers":[{"image":"nginx:1.16.0","imagePullPolicy":"IfNotPresent","livenessProbe":{"httpGet":{"path":"/","port":"http"}},"name":"hello-world","ports":[{"containerPort":80,"name":"http","protocol":"TCP"}],"readinessProbe":{"httpGet":{"path":"/","port":"http"}}}],"serviceAccountName":"kubeteam-hello-world"}}}}
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"deployment.kubernetes.io/revision":"1"},"creationTimestamp":"2023-04-19T11:51:49Z","generation":1,"labels":{"app.kubernetes.io/instance":"kubeadm","app.kubernetes.io/managed-by":"Helm","app.kubernetes.io/name":"hello-world","app.kubernetes.io/version":"1.16.0","helm.sh/chart":"hello-world-0.1.0"},"name":"kubeteam-hello-world","namespace":"default","resourceVersion":"4223170","uid":"55a7f5d4-d910-435f-bef2-e71256c509ad"},"spec":{"progressDeadlineSeconds":600,"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app.kubernetes.io/instance":"kubeteam","app.kubernetes.io/name":"hello-world"}},"strategy":{"rollingUpdate":{"maxSurge":"25%","maxUnavailable":"25%"},"type":"RollingUpdate"},"template":{"metadata":{"creationTimestamp":null,"labels":{"app.kubernetes.io/instance":"kubeteam","app.kubernetes.io/name":"hello-world"}},"spec":{"containers":[{"image":"nginx:1.16.0","imagePullPolicy":"IfNotPresent","livenessProbe":{"failureThreshold":3,"httpGet":{"path":"/","port":"http","scheme":"HTTP"},"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"name":"hello-world","ports":[{"containerPort":80,"name":"http","protocol":"TCP"}],"readinessProbe":{"failureThreshold":3,"httpGet":{"path":"/","port":"http","scheme":"HTTP"},"periodSeconds":10,"successThreshold":1,"timeoutSeconds":1},"resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"dnsPolicy":"ClusterFirst","restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{},"serviceAccount":"kubeteam-hello-world","serviceAccountName":"kubeteam-hello-world","terminationGracePeriodSeconds":30}}},"status":{"availableReplicas":1,"conditions":[{"lastTransitionTime":"2023-04-19T11:51:51Z","lastUpdateTime":"2023-04-19T11:51:51Z","message":"Deployment has minimum availability.","reason":"MinimumReplicasAvailable","status":"True","type":"Available"},{"lastTransitionTime":"2023-04-19T11:51:49Z","lastUpdateTime":"2023-04-19T11:51:51Z","message":"ReplicaSet \"kubeteam-hello-world-6c8fc4d7c\" has successfully progressed.","reason":"NewReplicaSetAvailable","status":"True","type":"Progressing"}],"observedGeneration":1,"readyReplicas":1,"replicas":1,"updatedReplicas":1}}
   creationTimestamp: "2023-04-19T11:51:49Z"
-  generation: 1
+  generation: 2
   labels:
-    app.kubernetes.io/instance: kubeteam
+    app.kubernetes.io/instance: kubeadm
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: hello-world
     app.kubernetes.io/version: 1.16.0
     helm.sh/chart: hello-world-0.1.0
   name: kubeteam-hello-world
   namespace: default
-  resourceVersion: "4223170"
+  resourceVersion: "5920085"
   uid: 55a7f5d4-d910-435f-bef2-e71256c509ad
 spec:
   progressDeadlineSeconds: 600
@@ -88,7 +88,7 @@ status:
     reason: NewReplicaSetAvailable
     status: "True"
     type: Progressing
-  observedGeneration: 1
+  observedGeneration: 2
   readyReplicas: 1
   replicas: 1
   updatedReplicas: 1
