@@ -8,7 +8,7 @@ metadata:
 
 spec: 
 
-  replicas: 2   # no of replicas will be created for this deployment 
+  replicas: 3   # no of replicas will be created for this deployment 
 
   selector: 
 
